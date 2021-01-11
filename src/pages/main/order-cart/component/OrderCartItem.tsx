@@ -107,7 +107,7 @@ const OrderCartItem = ({ item, listItem, classes, key, onLoad }: Props) => {
                     </TableCell>
                     <TableCell align="right">{item.nameCustomer !== "" ? item.nameCustomer : item.customer.name}</TableCell>
                     <TableCell align="right">{item.phoneCustomer !== "" ? item.phoneCustomer : item.customer.username}</TableCell>
-                    <TableCell align="right">{item.adddress !== "" ? item.adddress : item.customer.adddress}</TableCell>
+                    <TableCell align="right">{item.adddress !== "" ? item.adddress : "235, Hoàng Quốc việt, Hà Nội"}</TableCell>
                     <TableCell align="right"></TableCell>
                     <TableCell align="right"><ButtonOrder status={item.status} /></TableCell>
                 </TableRow>
