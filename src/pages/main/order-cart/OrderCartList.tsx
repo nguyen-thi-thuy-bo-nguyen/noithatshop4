@@ -13,14 +13,14 @@ import OrderCartItem from './component/OrderCartItem';
 import { useSelector } from 'react-redux';
 
 const OrderCartList = ({ }) => {
-    const list = useSelector((state: any) => state.order.orderList ? state.order.orderList : [])
-    console.log(list);
-    const [load, setLoad] = useState(false);
-    const onLoad = useCallback(() => { setLoad(!load) }, [load])
-    const Item = useCallback(() => {
-        return list.length !== 0 && list && list.map((item: any, index: number) => <OrderCartItem item={item} listItem={item.orderCartDetails} key={index} onLoad={onLoad} />)
+    // const list = useSelector((state: any) => state.order.orderList ? state.order.orderList : [])
+    // console.log(list);
+    // const [load, setLoad] = useState(false);
+    // const onLoad = useCallback(() => { setLoad(!load) }, [load])
+    // const Item = useCallback(() => {
+    //     return list.length !== 0 && list && list.map((item: any, index: number) => <OrderCartItem item={item} listItem={item.orderCartDetails} key={index} onLoad={onLoad} />)
 
-    }, [list, onLoad])
+    // }, [list, onLoad])
 
 
     return (
@@ -40,7 +40,7 @@ const OrderCartList = ({ }) => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            <Item />
+                            {/* <Item /> */}
                         </TableBody>
                     </Table>
                 </TableContainer>

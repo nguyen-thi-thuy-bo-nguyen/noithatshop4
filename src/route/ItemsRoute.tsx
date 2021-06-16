@@ -1,6 +1,7 @@
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core';
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { ProductPage } from '../pages/main';
 import BillCreate from '../pages/main/bill/BillCreate';
 import OrderCartList from '../pages/main/order-cart/OrderCartList';
 import OrderCartDetail from '../pages/main/order_cart_detail/OrderCartDetail';
@@ -20,13 +21,15 @@ const ItemsRoute = ({ children, classes }: PropsRoute) => {
             <div className={classes.root}>
                 {children}
                 <Switch>
-                    <Route exact path="/" component={OrderCartList} />
-                    <PrivateRoute exact path="/order/cart/detail"  >
+                    <Route exact path="/order" component={OrderCartList} />
+                    <Route exact path="/product" component={ProductPage} />
+
+                    {/* <PrivateRoute exact path="/order/cart/detail"  >
                         <OrderCartDetail />
                     </PrivateRoute>
                     <PrivateRoute exact path="/order/cart/bill"  >
                         <BillCreate />
-                    </PrivateRoute>
+                    </PrivateRoute> */}
                 </Switch>
             </div>
         </Router>
