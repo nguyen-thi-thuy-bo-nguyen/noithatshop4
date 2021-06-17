@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core';
 import Button from "@material-ui/core/Button"
 const styles = (theme: Theme) => createStyles({
@@ -13,15 +13,16 @@ interface Props extends WithStyles<typeof styles> {
     type: Variant;
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
+    className?: any
 }
-const FirstButton: React.FC<Props> = ({ classes, title, onClick, type, startIcon, endIcon }) => {
+const ButtonDefault: React.FC<Props> = ({ className, title, onClick, type, startIcon, endIcon }) => {
     return (
         <Button
             type="submit"
             fullWidth
             variant={type}
             color="primary"
-            className={classes.submit}
+            className={className}
             onClick={onClick}
             startIcon={startIcon}
             endIcon={endIcon}
@@ -31,4 +32,4 @@ const FirstButton: React.FC<Props> = ({ classes, title, onClick, type, startIcon
     );
 }
 
-export default withStyles(styles)(FirstButton);
+export default withStyles(styles)(memo<Props>(ButtonDefault));

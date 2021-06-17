@@ -10,15 +10,22 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 import OrderCartItem from './component/OrderCartItem';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Creators } from '../../../redux/reducer/order_cart/OrderCarReducer';
 
 const OrderCartList = ({ }) => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(Creators.orderRequest())
+    }, [])
     const list = useSelector((state: any) => state.order.orderList ? state.order.orderList : [])
-    console.log(list);
     const [load, setLoad] = useState(false);
     const onLoad = useCallback(() => { setLoad(!load) }, [load])
     const Item = useCallback(() => {
-        return list.length !== 0 && list && list.map((item: any, index: number) => <OrderCartItem item={item} listItem={item.orderCartDetails} key={index} onLoad={onLoad} />)
+        return list.length !== 0 && list &&
+            list.map((item: any, index: number) =>
+                <OrderCartItem item={item} listItem={item.orderCartDetails} key={index} onLoad={onLoad} />
+            )
 
     }, [list, onLoad])
 

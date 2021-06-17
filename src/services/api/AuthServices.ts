@@ -10,6 +10,6 @@ const setItem = (token: string) => {
   localStorage.setItem("token", JSON.stringify(token));
 };
 const getItem = () => {
-  return JSON.parse(localStorage.getItem("token") || "");
+  return JSON.parse(localStorage.getItem("token") ?? "[]");
 };
 export { author, removeItem, setItem, getItem };

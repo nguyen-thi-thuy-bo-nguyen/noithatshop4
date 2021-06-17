@@ -26,7 +26,6 @@ export const addList = (state = orderState, action: any) => {
     orderList: action.list,
   });
 };
-console.log(orderState);
 
 const HANDLERS = {
   [Types.ADD_LIST]: addList,

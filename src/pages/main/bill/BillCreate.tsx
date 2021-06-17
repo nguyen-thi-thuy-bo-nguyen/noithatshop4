@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 
-import ContainerDefault from '../../components/ContainerDefault';
+import { ContainerDefault } from '../../components';
 
 const BillCreate = () => {
     return (

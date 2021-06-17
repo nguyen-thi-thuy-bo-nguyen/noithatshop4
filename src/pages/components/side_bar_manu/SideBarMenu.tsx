@@ -22,7 +22,7 @@ import StarBorder from "@material-ui/icons/StarBorder";
 import Typography from "@material-ui/core/Typography";
 import { useTheme } from "@material-ui/core/styles";
 import { useStyles } from "./SideBarMenu.style";
-
+import SidebarMenuList from "./SideBarMenuList";
 
 const SideBarMenu = (props: any) => {
     const { window } = props;
@@ -42,36 +42,7 @@ const SideBarMenu = (props: any) => {
         <div>
             <div className={classes.toolbar} />
             <Divider />
-            <List component="nav" className={classes.listRoot}>
-                <ListItem button>
-                    <ListItemIcon>
-                        <SendIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Trang chủ" className={classes.text} />
-                </ListItem>
-
-                <ListItem button onClick={handleClick}>
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Quản lí đơn hàng" className={classes.text} />
-                    {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <StarBorder />
-                            </ListItemIcon>
-                            <ListItemText
-                                primary="Danh sách đơn hàng"
-                                className={classes.text}
-                            />
-                        </ListItem>
-                    </List>
-                </Collapse>
-            </List>
+            <SidebarMenuList />
         </div>
     );
 
@@ -93,8 +64,8 @@ const SideBarMenu = (props: any) => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        Responsive drawer
-          </Typography>
+                        Nội thất
+                    </Typography>
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer} aria-label="mailbox folders">

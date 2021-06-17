@@ -1,0 +1,6 @@
+export { default as FirstBackground } from './background/FirstBackground'
+export { default as FirstButton } from './button/FirstButton'
+export { default as LinkButton } from './button/LinkButton'
+export { default as ButtonDefault } from './button/ButtonDefault'
+export { default as ContainerDefault } from './ContainerDefault'
+export { default as SideBarMenu } from './side_bar_manu/SideBarMenu'

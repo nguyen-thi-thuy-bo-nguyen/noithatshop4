@@ -20,15 +20,10 @@ function* authorize(username: string, password: string) {
     username,
     password
   );
-  console.log(data);
-  console.log(originalError);
-
   if (originalError) {
     yield put(Creators.loginFailed({ error: originalError.message, status }));
     return;
   } else {
-    console.log(data);
-
     yield put(Creators.loginSuccess(data.jwtToken));
     yield call(setItem, data.jwtToken);
     return data;

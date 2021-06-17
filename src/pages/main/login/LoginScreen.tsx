@@ -5,8 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 
-import FirstBackground from '../../../asset/background/FirstBackground';
-import FirstButton from '../../components/button/FirstButton';
+import { FirstBackground, FirstButton } from '../../components';
 import { Creators } from '../../../redux/reducer/user/AuthReducer';
 import { Redirect } from 'react-router-dom';
 
@@ -36,8 +35,6 @@ const LoginScreen = () => {
 
     return (
         <>
-
-
             <FirstBackground title={"Đăng nhập"}>
                 <>
                     <Controller
@@ -70,7 +67,7 @@ const LoginScreen = () => {
                         type="password"
 
                     />
-                    <FirstButton title="Đăng nhập" onClick={handleSubmit(onHandleClick)} />
+                    <FirstButton title="Đăng nhập" onClick={handleSubmit(onHandleClick)} type="contained" />
 
                 </>
             </FirstBackground>

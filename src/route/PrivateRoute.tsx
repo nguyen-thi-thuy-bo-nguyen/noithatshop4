@@ -12,7 +12,6 @@ interface Props extends RouteProps {
 }
 const PrivateRoute = ({ children, ...rest }: Props) => {
     const auth = useSelector((state: any) => state.auth.token)
-    console.log(auth);
 
     return (
         <Route
@@ -21,13 +20,13 @@ const PrivateRoute = ({ children, ...rest }: Props) => {
                 auth !== "" ? (
                     children
                 ) : (
-                        <Redirect
-                            to={{
-                                pathname: "/login",
-                                state: { from: location }
-                            }}
-                        />
-                    )
+                    <Redirect
+                        to={{
+                            pathname: "/login",
+                            state: { from: location }
+                        }}
+                    />
+                )
             }
         />
     );

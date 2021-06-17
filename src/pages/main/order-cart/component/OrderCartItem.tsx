@@ -21,7 +21,7 @@ import Statuses from '../../../../asset/common/Statuses';
 import StatusesVi from '../../../../asset/common/StatusesVi';
 import OrderCartServices from '../../../../services/api/OrderCartServices';
 import { useDispatch } from 'react-redux';
-import { Creators } from '../../../../redux/reducer/user/OrderCarReducer';
+import { Creators } from '../../../../redux/reducer/order_cart/OrderCarReducer';
 
 const styles = (theme: Theme) => createStyles({
     status: { fontSize: 12 },
